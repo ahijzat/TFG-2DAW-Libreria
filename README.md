@@ -41,7 +41,7 @@
    - Docker
    - AWS (Amazon Web Service)
 
-## [Esquema entida-relación](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/EntidadRelacion)
+## [Esquema entidad-relación](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/EntidadRelacion)
 
 ## [Documentación técnica](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/Documentaci%C3%B3nTecnica)
 
