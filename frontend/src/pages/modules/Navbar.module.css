@@ -1,0 +1,328 @@
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-primario);
+  box-shadow: 0 2px 12px rgba(44, 31, 20, 0.25);
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-lg);
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  color: var(--color-texto-inverso);
+  font-family: var(--fuente-principal);
+  font-size: var(--texto-xl);
+  font-weight: 700;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  color: var(--color-fondo-alterno);
+}
+
+.logoIcono {
+  font-size: 1.6rem;
+}
+
+.enlaces {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  flex: 1;
+}
+
+.enlace {
+  color: rgba(255, 248, 240, 0.85);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radio-md);
+  transition: background-color var(--transicion), color var(--transicion);
+  text-decoration: none;
+}
+
+.enlace:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-texto-inverso);
+}
+
+.activo {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: var(--color-texto-inverso);
+  font-weight: 600;
+}
+
+/* Grupo admin con submenú */
+.grupoAdmin {
+  position: relative;
+}
+
+.grupoAdmin:hover .submenu {
+  display: block;
+}
+
+.enlaceAdmin {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 248, 240, 0.85);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radio-md);
+  cursor: pointer;
+  transition: background-color var(--transicion);
+}
+
+.enlaceAdmin:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-texto-inverso);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 160px;
+  background: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-md);
+  padding: var(--espacio-sm) 0;
+  z-index: 200;
+}
+
+.submenu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+
+.submenu li a {
+  display: block;
+  padding: 8px var(--espacio-md);
+  font-size: var(--texto-sm);
+  color: var(--color-texto);
+  transition: background-color var(--transicion);
+}
+
+.submenu li a:hover {
+  background-color: var(--color-fondo-alterno);
+  color: var(--color-primario);
+}
+
+/* Acciones derecha */
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  margin-left: auto;
+}
+
+.botonIcono {
+  position: relative;
+  color: var(--color-texto-inverso);
+  font-size: 1.5rem;
+  padding: 6px;
+  border-radius: var(--radio-md);
+  transition: background-color var(--transicion);
+  display: flex;
+  align-items: center;
+}
+
+.botonIcono:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.badgeCarrito {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #e65100;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: var(--radio-full);
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.menuUsuario {
+  position: relative;
+}
+
+.botonUsuario {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  color: var(--color-texto-inverso);
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: var(--radio-md);
+  transition: background-color var(--transicion);
+}
+
+.botonUsuario:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.botonUsuario svg {
+  font-size: 1.4rem;
+}
+
+.nombreUsuario {
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desplegable {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 180px;
+  background: var(--color-fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-md);
+  padding: var(--espacio-sm) 0;
+  z-index: 200;
+}
+
+.desplegable li a,
+.botonCerrarSesion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  padding: 9px var(--espacio-md);
+  font-size: var(--texto-sm);
+  color: var(--color-texto);
+  width: 100%;
+  text-align: left;
+  transition: background-color var(--transicion);
+}
+
+.desplegable li a:hover,
+.botonCerrarSesion:hover {
+  background-color: var(--color-fondo-alterno);
+  color: var(--color-primario);
+}
+
+.botonCerrarSesion {
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+.botonCerrarSesion:hover {
+  color: var(--color-error);
+}
+
+.separador {
+  border-top: 1px solid var(--color-borde-suave);
+  margin: var(--espacio-xs) 0;
+}
+
+.accionesAuth {
+  display: flex;
+  gap: var(--espacio-sm);
+  align-items: center;
+}
+
+.botonAuth {
+  min-width: 110px;
+  justify-content: center;
+  border-width: 1px;
+  transition: background-color var(--transicion), border-color var(--transicion), color var(--transicion), box-shadow var(--transicion), transform var(--transicion);
+}
+
+.botonEntrar {
+  background-color: transparent;
+  color: var(--color-texto-inverso);
+  border-color: rgba(255, 248, 240, 0.45);
+}
+
+.botonEntrar:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-texto-inverso);
+  border-color: rgba(255, 248, 240, 0.75);
+  box-shadow: 0 8px 18px rgba(24, 15, 9, 0.18);
+}
+
+/* Hamburguesa — solo móvil */
+.hamburguesa {
+  display: none;
+  color: var(--color-texto-inverso);
+  font-size: 1.6rem;
+  padding: 4px;
+}
+
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: flex;
+    align-items: center;
+  }
+
+  .enlaces {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--color-primario-oscuro);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--espacio-md);
+    gap: 4px;
+  }
+
+  .menuVisible {
+    display: flex;
+  }
+
+  .enlace {
+    width: 100%;
+    display: block;
+  }
+
+  .grupoAdmin {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    display: block;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    padding-left: var(--espacio-md);
+  }
+
+  .submenu li a {
+    color: rgba(255, 248, 240, 0.85);
+  }
+
+  .nombreUsuario {
+    display: none;
+  }
+}

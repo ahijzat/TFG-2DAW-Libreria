@@ -1,0 +1,129 @@
+.pagina {
+  padding-top: var(--espacio-2xl);
+  padding-bottom: var(--espacio-3xl);
+}
+
+.titulo {
+  font-size: var(--texto-3xl);
+  color: var(--color-primario-oscuro);
+  margin-bottom: var(--espacio-xl);
+}
+
+.subtitulo {
+  font-size: var(--texto-lg);
+  color: var(--color-primario-oscuro);
+  margin-bottom: var(--espacio-lg);
+  padding-bottom: var(--espacio-sm);
+  border-bottom: 2px solid var(--color-borde-suave);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--espacio-xl);
+  align-items: start;
+}
+
+.listaCard {
+  min-height: 200px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-md);
+  padding: var(--espacio-md) 0;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.infoItem {
+  flex: 1;
+}
+
+.tituloItem {
+  font-size: var(--texto-base);
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+.autorItem {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-suave);
+}
+
+.cantidadItem {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-md);
+  flex-shrink: 0;
+}
+
+.etiquetaCantidad {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+  background: var(--color-fondo-alterno);
+  padding: 4px 10px;
+  border-radius: var(--radio-full);
+  font-weight: 600;
+}
+
+.subtotalItem {
+  font-size: var(--texto-base);
+  font-weight: 700;
+  color: var(--color-texto);
+  min-width: 80px;
+  text-align: right;
+}
+
+.resumenCard {
+  position: sticky;
+  top: 80px;
+}
+
+.lineaResumen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espacio-sm) 0;
+  font-size: var(--texto-base);
+  color: var(--color-texto-secundario);
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.gratis {
+  color: var(--color-exito);
+  font-weight: 600;
+}
+
+.total {
+  font-size: var(--texto-lg);
+  color: var(--color-texto);
+  border-bottom: 2px solid var(--color-primario-suave);
+}
+
+.accionVolver {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--espacio-xl);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .resumenCard {
+    position: static;
+  }
+}

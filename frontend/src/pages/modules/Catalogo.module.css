@@ -1,0 +1,190 @@
+.pagina {
+  padding-top: var(--espacio-2xl);
+  padding-bottom: var(--espacio-3xl);
+}
+
+.cabecera {
+  margin-bottom: var(--espacio-xl);
+}
+
+.titulo {
+  font-size: var(--texto-3xl);
+  color: var(--color-primario-oscuro);
+  margin-bottom: var(--espacio-xs);
+}
+
+.subtitulo {
+  font-size: var(--texto-base);
+  color: var(--color-texto-suave);
+}
+
+.panelFiltros {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+  margin-bottom: var(--espacio-xl);
+  padding: var(--espacio-lg);
+  background: var(--color-fondo-alterno);
+  border-radius: var(--radio-lg);
+  border: 1px solid var(--color-borde-suave);
+}
+
+.filtroBusqueda {
+  max-width: 500px;
+}
+
+.filtrosSecundarios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-sm);
+  align-items: center;
+}
+
+.selectFiltro,
+.inputPrecio {
+  padding: 9px var(--espacio-md);
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-md);
+  background: var(--color-fondo-tarjeta);
+  color: var(--color-texto);
+  font-size: var(--texto-sm);
+  outline: none;
+  transition: border-color var(--transicion);
+  cursor: pointer;
+}
+
+.selectFiltro:focus,
+.inputPrecio:focus {
+  border-color: var(--color-primario);
+}
+
+.inputPrecio {
+  width: 130px;
+}
+
+.contadorResultados {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-suave);
+  margin-bottom: var(--espacio-md);
+}
+
+.gridLibros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--espacio-lg);
+}
+
+.tarjetaLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.tarjeta {
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.portada {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--color-fondo-alterno);
+  flex-shrink: 0;
+}
+
+.imagenPortada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transicion-lenta);
+}
+
+.tarjetaLink:hover .imagenPortada {
+  transform: scale(1.04);
+}
+
+.portadaPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: var(--color-primario-suave);
+}
+
+.info {
+  padding: var(--espacio-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.generosTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.generoTag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primario);
+  background: rgba(107, 79, 58, 0.1);
+  padding: 2px 7px;
+  border-radius: var(--radio-full);
+}
+
+.tituloLibro {
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  color: var(--color-texto);
+  line-height: 1.4;
+}
+
+.autorLibro {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+}
+
+.pieTarjeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--espacio-sm);
+  border-top: 1px solid var(--color-borde-suave);
+}
+
+.precio {
+  font-weight: 700;
+  font-size: var(--texto-md);
+  color: var(--color-primario);
+}
+
+.enStock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--texto-xs);
+  color: var(--color-exito);
+  font-weight: 600;
+}
+
+.sinStock {
+  font-size: var(--texto-xs);
+  color: var(--color-texto-suave);
+}
+
+@media (max-width: 600px) {
+  .gridLibros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacio-sm);
+  }
+}

@@ -1,0 +1,39 @@
+.fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 31, 20, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--espacio-md);
+}
+
+.panel {
+  background: var(--color-fondo-tarjeta);
+  border-radius: var(--radio-lg);
+  padding: var(--espacio-xl);
+  max-width: 420px;
+  width: 100%;
+  box-shadow: var(--sombra-lg);
+  outline: none;
+}
+
+.titulo {
+  font-size: var(--texto-lg);
+  margin-bottom: var(--espacio-sm);
+  color: var(--color-primario-oscuro);
+}
+
+.mensaje {
+  font-size: var(--texto-sm);
+  color: var(--color-texto-secundario);
+  margin-bottom: var(--espacio-lg);
+  line-height: 1.6;
+}
+
+.acciones {
+  display: flex;
+  gap: var(--espacio-sm);
+  justify-content: flex-end;
+}

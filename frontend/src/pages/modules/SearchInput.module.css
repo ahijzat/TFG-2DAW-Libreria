@@ -1,0 +1,50 @@
+.contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.iconoBuscar {
+  position: absolute;
+  left: 12px;
+  color: var(--color-texto-suave);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 40px 10px 40px;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-full);
+  background: var(--color-fondo-tarjeta);
+  color: var(--color-texto);
+  font-size: var(--texto-sm);
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+  outline: none;
+}
+
+/* Eliminar botón nativo del input type=search */
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(107, 79, 58, 0.12);
+}
+
+.botonLimpiar {
+  position: absolute;
+  right: 10px;
+  color: var(--color-texto-suave);
+  font-size: 1.1rem;
+  padding: 4px;
+  border-radius: 50%;
+  transition: color var(--transicion);
+}
+
+.botonLimpiar:hover {
+  color: var(--color-primario);
+}
