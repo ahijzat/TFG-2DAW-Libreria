@@ -29,8 +29,8 @@
 
 | Recurso | Enlace |
 |---|---|
-| **Aplicación en producción** | Pendiente de añadir enlace |
-| **Prototipado de alta fidelidad (Figma)** | (https://www.figma.com/design/WtixS9zyxeyYDeegNaMPrW/TFG-libreria?node-id=2003-2&t=fKmmQ5Tmkr0oZ77G-1) |
+| **Aplicación en producción** | [Aplicación](https://tfg-2-daw-libreria.vercel.app) |
+| **Prototipado de alta fidelidad (Figma)** | [Figma](https://www.figma.com/design/WtixS9zyxeyYDeegNaMPrW/TFG-libreria?node-id=2003-2&t=fKmmQ5Tmkr0oZ77G-1) |
 | **Esquema entidad-relación** | [Wiki — Entidad-Relación](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/EntidadRelacion) |
 | **Documentación técnica** | [Wiki — Documentación Técnica](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/Documentaci%C3%B3nTecnica) |
 | **Repositorio** | [github.com/ahijzat/TFG-2DAW-Libreria](https://github.com/ahijzat/TFG-2DAW-Libreria) |
