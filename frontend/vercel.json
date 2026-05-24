@@ -5,8 +5,8 @@
             "destination": "http://13.62.147.251/api/:path"
         },
         {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
     ]
 }
