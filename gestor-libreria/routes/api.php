@@ -60,21 +60,18 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/prestamos/{prestamo}', [PrestamoController::class, 'destroy']);
         Route::patch('/prestamos/{prestamo}/devolver', [PrestamoController::class, 'devolver']);
 
-        // Multas
         Route::get('/multas', [MultaController::class, 'index']);
         Route::post('/multas', [MultaController::class, 'store']);
         Route::get('/multas/{multa}', [MultaController::class, 'show']);
         Route::put('/multas/{multa}', [MultaController::class, 'update']);
         Route::delete('/multas/{multa}', [MultaController::class, 'destroy']);
 
-        // Detalles de compra (sub-recurso)
         Route::get('/compras/{compra}/detalles', [CompraDetalleController::class, 'index']);
         Route::post('/compras/{compra}/detalles', [CompraDetalleController::class, 'store']);
         Route::get('/compras/{compra}/detalles/{detalle}', [CompraDetalleController::class, 'show']);
         Route::put('/compras/{compra}/detalles/{detalle}', [CompraDetalleController::class, 'update']);
         Route::delete('/compras/{compra}/detalles/{detalle}', [CompraDetalleController::class, 'destroy']);
 
-        // Usuarios
         Route::get('/usuarios', [UserController::class, 'index']);
         Route::get('/usuarios/{user}', [UserController::class, 'show']);
         Route::put('/usuarios/{user}', [UserController::class, 'update']);
