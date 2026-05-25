@@ -6,9 +6,11 @@ import estilos from '../../pages/modules/Admin.module.css'
 
 function PrestamoForm({ onGuardar, onCerrar, cargando }) {
   const [form, setForm] = useState({
-    usuario_id: '',
+    user_id: '',
     libro_id: '',
-    fecha_devolucion_prevista: '',
+    fecha_prestamo: new Date().toISOString().split('T')[0],
+    fecha_limite_devolucion: '',
+    estado: 'activo',
   })
   const [errores, setErrores] = useState({})
   const [busquedaUsuario, setBusquedaUsuario] = useState('')
@@ -59,10 +61,10 @@ function PrestamoForm({ onGuardar, onCerrar, cargando }) {
               placeholder="Buscar usuario por nombre o email..."
               value={busquedaUsuario}
               onChange={(e) => buscarUsuarios(e.target.value)}
-              className={errores.usuario_id ? 'con-error' : ''}
+              className={errores.user_id ? 'con-error' : ''}
               autoComplete="off"
             />
-            {errores.usuario_id && <span className="mensaje-error-campo">{errores.usuario_id[0]}</span>}
+            {errores.user_id && <span className="mensaje-error-campo">{errores.user_id[0]}</span>}
             {usuarios.length > 0 && (
               <ul style={{ listStyle: 'none', border: '1px solid var(--color-borde)', borderRadius: 'var(--radio-sm)', marginTop: '4px', maxHeight: '140px', overflowY: 'auto' }}>
                 {usuarios.map((u) => (
@@ -71,7 +73,7 @@ function PrestamoForm({ onGuardar, onCerrar, cargando }) {
                       type="button"
                       style={{ width: '100%', textAlign: 'left', padding: '8px 12px', fontSize: 'var(--texto-sm)' }}
                       onClick={() => {
-                        setForm((p) => ({ ...p, usuario_id: u.id }))
+                        setForm((p) => ({ ...p, user_id: u.id }))
                         setBusquedaUsuario(`${u.name} (${u.email})`)
                         setUsuarios([])
                       }}
@@ -82,9 +84,9 @@ function PrestamoForm({ onGuardar, onCerrar, cargando }) {
                 ))}
               </ul>
             )}
-            {form.usuario_id && (
+            {form.user_id && (
               <span style={{ fontSize: 'var(--texto-xs)', color: 'var(--color-exito)' }}>
-                <Icon icon="mdi:check" /> Usuario seleccionado (ID: {form.usuario_id})
+                <Icon icon="mdi:check" /> Usuario seleccionado (ID: {form.user_id})
               </span>
             )}
           </div>
@@ -129,17 +131,17 @@ function PrestamoForm({ onGuardar, onCerrar, cargando }) {
           </div>
 
           <div className="campo-formulario">
-            <label htmlFor="fecha_devolucion_prevista">Fecha prevista de devolución *</label>
+            <label htmlFor="fecha_limite_devolucion">Fecha límite de devolución *</label>
             <input
-              id="fecha_devolucion_prevista"
+              id="fecha_limite_devolucion"
               type="date"
-              value={form.fecha_devolucion_prevista}
-              onChange={(e) => setForm((p) => ({ ...p, fecha_devolucion_prevista: e.target.value }))}
+              value={form.fecha_limite_devolucion}
+              onChange={(e) => setForm((p) => ({ ...p, fecha_limite_devolucion: e.target.value }))}
               min={new Date().toISOString().split('T')[0]}
-              className={errores.fecha_devolucion_prevista ? 'con-error' : ''}
+              className={errores.fecha_limite_devolucion ? 'con-error' : ''}
             />
-            {errores.fecha_devolucion_prevista && (
-              <span className="mensaje-error-campo">{errores.fecha_devolucion_prevista[0]}</span>
+            {errores.fecha_limite_devolucion && (
+              <span className="mensaje-error-campo">{errores.fecha_limite_devolucion[0]}</span>
             )}
           </div>
 

@@ -10,6 +10,7 @@ import LoadingSpinner from '../../components/UI/LoadingSpinner'
 import EstadoVacio from '../../components/UI/EstadoVacio'
 import BadgeEstado from '../../components/UI/BadgeEstado'
 import ConfirmDialog from '../../components/UI/ConfirmDialog'
+import Pagination from '../../components/Common/Pagination'
 import { formatearFecha, formatearPrecio, etiquetaEstadoCompra, etiquetaEstadoPrestamo, etiquetaEstadoMulta } from '../../utils/formatters'
 import estilos from '../modules/Perfil.module.css'
 
@@ -28,6 +29,12 @@ function Perfil() {
 
   // Estado para la pestaña activa del historial
   const [pestanaActiva, setPestanaActiva] = useState('compras')
+
+  // Paginación por pestaña
+  const ITEMS_POR_PAGINA = 6
+  const [paginaCompras, setPaginaCompras] = useState(1)
+  const [paginaPrestamos, setPaginaPrestamos] = useState(1)
+  const [paginaMultas, setPaginaMultas] = useState(1)
 
   // Compras
   const fetchCompras = useFetch()
@@ -280,7 +287,7 @@ function Perfil() {
                 role="tab"
                 aria-selected={pestanaActiva === 'compras'}
                 className={`${estilos.pestana} ${pestanaActiva === 'compras' ? estilos.pestanaActiva : ''}`}
-                onClick={() => setPestanaActiva('compras')}
+                onClick={() => { setPestanaActiva('compras'); setPaginaCompras(1) }}
               >
                 <Icon icon="mdi:shopping-outline" /> Compras
               </button>
@@ -288,7 +295,7 @@ function Perfil() {
                 role="tab"
                 aria-selected={pestanaActiva === 'prestamos'}
                 className={`${estilos.pestana} ${pestanaActiva === 'prestamos' ? estilos.pestanaActiva : ''}`}
-                onClick={() => setPestanaActiva('prestamos')}
+                onClick={() => { setPestanaActiva('prestamos'); setPaginaPrestamos(1) }}
               >
                 <Icon icon="mdi:book-clock-outline" /> Préstamos
               </button>
@@ -296,7 +303,7 @@ function Perfil() {
                 role="tab"
                 aria-selected={pestanaActiva === 'multas'}
                 className={`${estilos.pestana} ${pestanaActiva === 'multas' ? estilos.pestanaActiva : ''}`}
-                onClick={() => setPestanaActiva('multas')}
+                onClick={() => { setPestanaActiva('multas'); setPaginaMultas(1) }}
               >
                 <Icon icon="mdi:alert-circle-outline" /> Multas
               </button>
@@ -315,7 +322,7 @@ function Perfil() {
                   />
                 ) : (
                   <div className={estilos.listaHistorial}>
-                    {compras.map((compra) => (
+                    {compras.slice((paginaCompras - 1) * ITEMS_POR_PAGINA, paginaCompras * ITEMS_POR_PAGINA).map((compra) => (
                       <div key={compra.id} className={estilos.itemHistorial}>
                         <div className={estilos.filaItem}>
                           <div className={estilos.infoItem}>
@@ -364,6 +371,13 @@ function Perfil() {
                     ))}
                   </div>
                 )}
+                {compras && compras.length > ITEMS_POR_PAGINA && (
+                  <Pagination
+                    paginaActual={paginaCompras}
+                    totalPaginas={Math.ceil(compras.length / ITEMS_POR_PAGINA)}
+                    onCambiarPagina={setPaginaCompras}
+                  />
+                )}
               </div>
             )}
 
@@ -380,7 +394,7 @@ function Perfil() {
                   />
                 ) : (
                   <div className={estilos.listaHistorial}>
-                    {prestamos.map((prestamo) => (
+                    {prestamos.slice((paginaPrestamos - 1) * ITEMS_POR_PAGINA, paginaPrestamos * ITEMS_POR_PAGINA).map((prestamo) => (
                       <div key={prestamo.id} className={estilos.itemHistorial}>
                         <div className={estilos.filaItem}>
                           <div className={estilos.infoItem}>
@@ -419,6 +433,13 @@ function Perfil() {
                     ))}
                   </div>
                 )}
+                {prestamos && prestamos.length > ITEMS_POR_PAGINA && (
+                  <Pagination
+                    paginaActual={paginaPrestamos}
+                    totalPaginas={Math.ceil(prestamos.length / ITEMS_POR_PAGINA)}
+                    onCambiarPagina={setPaginaPrestamos}
+                  />
+                )}
 
                 <ConfirmDialog
                   abierto={confirmarDevolucion !== null}
@@ -444,7 +465,7 @@ function Perfil() {
                   />
                 ) : (
                   <div className={estilos.listaHistorial}>
-                    {multas.map((multa) => (
+                    {multas.slice((paginaMultas - 1) * ITEMS_POR_PAGINA, paginaMultas * ITEMS_POR_PAGINA).map((multa) => (
                       <div key={multa.id} className={estilos.itemHistorial}>
                         <div className={estilos.filaItem}>
                           <div className={estilos.infoItem}>
@@ -470,6 +491,13 @@ function Perfil() {
                       </div>
                     ))}
                   </div>
+                )}
+                {multas && multas.length > ITEMS_POR_PAGINA && (
+                  <Pagination
+                    paginaActual={paginaMultas}
+                    totalPaginas={Math.ceil(multas.length / ITEMS_POR_PAGINA)}
+                    onCambiarPagina={setPaginaMultas}
+                  />
                 )}
               </div>
             )}

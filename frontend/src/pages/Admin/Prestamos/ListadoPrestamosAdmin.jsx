@@ -53,7 +53,7 @@ function ListadoPrestamosAdmin() {
 
   const confirmarDevolucion = async () => {
     if (!devolverIds) return
-    const { data } = await fetchMutacion.peticion(API.admin.prestamoDevolucion(devolverIds), { method: 'PUT' })
+    const { data } = await fetchMutacion.peticion(API.admin.prestamoDevolucion(devolverIds), { method: 'PATCH' })
     if (data) {
       toast.success('Préstamo marcado como devuelto.')
       setDevolverIds(null)
@@ -102,7 +102,7 @@ function ListadoPrestamosAdmin() {
                     </span>
                     <span>
                       <Icon icon="mdi:calendar-end" className={estilos.iconoFila} />
-                      {formatearFecha(p.fecha_devolucion_prevista)}
+                      {formatearFecha(p.fecha_limite_devolucion)}
                     </span>
                   </div>
                 </div>
