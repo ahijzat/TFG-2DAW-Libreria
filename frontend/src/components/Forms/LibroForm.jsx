@@ -59,7 +59,7 @@ function LibroForm({ libro, onGuardar, onCerrar, cargando }) {
 
   const manejarEnvio = async (e) => {
     e.preventDefault()
-    const payload = { ...form, genero_ids: generosSeleccionados }
+    const payload = { ...form, generos: generosSeleccionados }
     const resultado = await onGuardar(payload, libro?.id)
     if (resultado?.errores) setErrores(resultado.errores)
   }
