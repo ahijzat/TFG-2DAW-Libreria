@@ -34,7 +34,7 @@
 | **Esquema entidad-relación** | [Wiki — Entidad-Relación](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/EntidadRelacion) |
 | **Documentación técnica** | [Wiki — Documentación Técnica](https://github.com/ahijzat/TFG-2DAW-Libreria/wiki/Documentaci%C3%B3nTecnica) |
 | **Repositorio** | [github.com/ahijzat/TFG-2DAW-Libreria](https://github.com/ahijzat/TFG-2DAW-Libreria) |
-| **Vídeo del proyecto** | Pendiente de añadir enlace |
+| **Vídeo del proyecto** | [Video del proyecto](https://youtu.be/wA66uJjso2A) |
 
 ---
 
